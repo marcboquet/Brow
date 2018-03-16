@@ -120,6 +120,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem?.toolTip = "Brow"
         statusItem?.highlightMode = true
+        statusItem?.button?.image = #imageLiteral(resourceName: "Safari")
+        statusItem?.button?.image?.isTemplate = true
         statusItem?.menu = createMenu()
     }
     func createMenu() -> NSMenu {
