@@ -21,8 +21,8 @@ class FakeLinkOpener : LinkOpener {
 class FakeBrowserManager : BrowserManager {
     var theBundleId = "com.google.Chrome"
 
-    override func bundleIdForUrl(_ url: String) -> String {
-        return theBundleId
+    override func urlAndBundleIdForUrl(_ url: String) -> UrlAndBundleId {
+        return UrlAndBundleId(url: url, bundleId: theBundleId)
     }
 }
 

@@ -17,6 +17,7 @@
 		491964F0205C180B007A424C /* LinkHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491964EF205C180B007A424C /* LinkHandlerTests.swift */; };
 		491964F2205C1F10007A424C /* AppEventsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491964F1205C1F10007A424C /* AppEventsHandler.swift */; };
 		491964F4205C31AA007A424C /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491964F3205C31AA007A424C /* Menu.swift */; };
+		49473D6B205D227E00C0BBAA /* BrowserManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49473D6A205D227E00C0BBAA /* BrowserManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		491964EF205C180B007A424C /* LinkHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkHandlerTests.swift; sourceTree = "<group>"; };
 		491964F1205C1F10007A424C /* AppEventsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEventsHandler.swift; sourceTree = "<group>"; };
 		491964F3205C31AA007A424C /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		49473D6A205D227E00C0BBAA /* BrowserManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		491964D32059AD54007A424C /* BrowTests */ = {
 			isa = PBXGroup;
 			children = (
+				49473D6A205D227E00C0BBAA /* BrowserManagerTests.swift */,
 				491964EF205C180B007A424C /* LinkHandlerTests.swift */,
 				491964D42059AD54007A424C /* BrowTests.swift */,
 				491964D62059AD54007A424C /* Info.plist */,
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				491964F0205C180B007A424C /* LinkHandlerTests.swift in Sources */,
+				49473D6B205D227E00C0BBAA /* BrowserManagerTests.swift in Sources */,
 				491964D52059AD54007A424C /* BrowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

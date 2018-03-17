@@ -22,11 +22,17 @@ class BrowserManager {
         configureEventsHandler()
     }
 
-    func bundleIdForUrl(_ url: String) -> String {
-        if let lastBrowserUsed = lastBrowserUsed {
-            return lastBrowserUsed
+    func urlAndBundleIdForUrl(_ url: String) -> UrlAndBundleId {
+        if url.starts(with: "https://zoom.us/j/") {
+            if let meetingId = url.split(separator: "/").last {
+                let zoomurl = "zoommtg://zoom.us/join?action=join&confno=\(meetingId)"
+                return UrlAndBundleId(url: zoomurl, bundleId: "us.zoom.xos")
+            }
         }
-        return defaultBundleId
+        if let lastBrowserUsed = lastBrowserUsed {
+            return UrlAndBundleId(url: url, bundleId: lastBrowserUsed)
+        }
+        return UrlAndBundleId(url: url, bundleId: defaultBundleId)
     }
     
     private func configureEventsHandler() {

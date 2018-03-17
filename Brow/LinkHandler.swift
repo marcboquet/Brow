@@ -36,9 +36,9 @@ class LinkHandler {
     
     func handle(url: String) {
         debugPrint("Handling \(url)")
-        let bundleId = browserManager.bundleIdForUrl(url)
+        let urlAndBundleId = browserManager.urlAndBundleIdForUrl(url)
         
-        if !linkOpener.open(UrlAndBundleId(url: url, bundleId: bundleId)) {
+        if !linkOpener.open(UrlAndBundleId(url: urlAndBundleId.url, bundleId: urlAndBundleId.bundleId)) {
             linkOpener.open(UrlAndBundleId(url: url, bundleId: browserManager.defaultBundleId))
         }
     }
