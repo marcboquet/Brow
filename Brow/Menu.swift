@@ -9,17 +9,19 @@
 import Cocoa
 
 class Menu {
-    var statusItem: NSStatusItem?
+    var statusItem: NSStatusItem!
+    
+    init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(lastBrowserUsedChanged), name: NSNotification.Name("lastBrowserUsedChanged"), object: nil)
+    }
 
     func createStatusItem() {
-        if self.statusItem != nil { return }
-        let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        if statusItem != nil { return }
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem.toolTip = "Brow"
         statusItem.highlightMode = true
-        statusItem.button?.image = #imageLiteral(resourceName: "FirefoxDeveloperEdition")
-        statusItem.button?.image?.isTemplate = true
+        setImage("com.apple.Safari")
         statusItem.menu = createMenu()
-        self.statusItem = statusItem
     }
     
     func createMenu() -> NSMenu {
@@ -30,7 +32,24 @@ class Menu {
         return menu
     }
     
+    func setImage(_ bundleId : String) {
+        if let button = statusItem?.button {
+            var image = NSImage(named: NSImage.Name(bundleId))
+            if image == nil {
+                image = NSImage(named: NSImage.Name("com.apple.Safari"))
+            }
+            image?.isTemplate = true
+            button.image = image
+        }
+    }
+    
     @objc func doQuit() {
         NSApp.terminate(nil)
+    }
+    
+    @objc func lastBrowserUsedChanged(notification: NSNotification) {
+        if let bundleId : String = notification.object as? String {
+            setImage(bundleId)
+        }
     }
 }

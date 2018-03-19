@@ -13,7 +13,13 @@ class BrowserManager {
                                            "com.google.Chrome",
                                            "org.mozilla.firefox",
                                            "org.mozilla.firefoxdeveloperedition"]
-    var lastBrowserUsed : String?
+
+    var lastBrowserUsed : String? {
+        didSet {
+            NotificationCenter.default.post(name: Notification.Name("lastBrowserUsedChanged"), object: lastBrowserUsed)
+        }
+    }
+
     var defaultBundleId = "com.apple.Safari"
     let appEventsHandler : SystemAppEventsHandler
     
