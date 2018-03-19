@@ -12,7 +12,9 @@ class BrowserManager {
     var availableBrowsers : Set<String> = ["com.apple.Safari",
                                            "com.google.Chrome",
                                            "org.mozilla.firefox",
-                                           "org.mozilla.firefoxdeveloperedition"]
+                                           "com.operasoftware.Opera",
+                                           "org.mozilla.firefoxdeveloperedition",
+                                           "com.google.Chrome.canary"]
 
     var lastBrowserUsed : String? {
         didSet {
